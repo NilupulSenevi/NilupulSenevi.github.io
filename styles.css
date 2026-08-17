@@ -355,6 +355,27 @@ body {
 }
 .timeline__title { font-weight: 600; margin-bottom: 4px; }
 .timeline__org { color: var(--text-secondary); font-size: 14px; }
+.timeline__media {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 16 / 9;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.timeline__media img { width: 100%; height: 100%; object-fit: cover; }
+.timeline--compact .timeline__media { display: none; }
+
+/* ============================================================
+   SHARED MEDIA PLACEHOLDER (skills, experience, recognition, projects)
+   ============================================================ */
+.media-placeholder { display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--text-muted); }
+.media-placeholder span { font-size: 11px; font-family: var(--font-mono); }
 
 /* ============================================================
    SKILLS
@@ -368,10 +389,21 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
   transition: border-color var(--transition), transform var(--transition);
 }
 .skill-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.skill-card__media {
+  aspect-ratio: 16 / 9;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.skill-card__media img { width: 100%; height: 100%; object-fit: cover; }
+.skill-card__body { padding: 20px; }
 .skill-card__title { font-size: 15px; font-weight: 600; margin-bottom: 10px; }
 .skill-card__list { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
 
@@ -403,9 +435,45 @@ body {
   position: relative;
 }
 .project-card__media img { width: 100%; height: 100%; object-fit: cover; }
-.project-card__placeholder { display: flex; flex-direction: column; align-items: center; gap: 8px; }
-.project-card__placeholder span { font-size: 12px; font-family: var(--font-mono); }
+.project-card__media video { width: 100%; height: 100%; object-fit: cover; background: #000; }
 .project-card__body { padding: 20px; flex: 1; display: flex; flex-direction: column; }
+
+.project-card__video-trigger {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+.project-card__video-trigger::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  transition: background var(--transition);
+}
+.project-card__video-trigger:hover::after,
+.project-card__video-trigger:focus-visible::after { background: rgba(0, 0, 0, 0.45); }
+.project-card__play {
+  position: relative;
+  z-index: 1;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform var(--transition);
+}
+.project-card__play svg { transform: translateX(1px); }
+.project-card__video-trigger:hover .project-card__play,
+.project-card__video-trigger:focus-visible .project-card__play { transform: scale(1.08); }
 .project-card__tag {
   font-family: var(--font-mono);
   font-size: 11px;
@@ -496,33 +564,37 @@ body {
 .recognition-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+  gap: 20px;
 }
-.recognition-card {
+.recognition-item {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), transform var(--transition);
 }
-.recognition-card__title { font-size: 15px; font-weight: 600; margin-bottom: 16px; }
-.recognition-card__list { display: flex; flex-direction: column; gap: 14px; }
-.recognition-card__list li {
-  font-size: 13.5px;
-  color: var(--text-secondary);
-  padding-left: 16px;
-  position: relative;
-  line-height: 1.6;
+.recognition-item:hover { border-color: var(--accent); transform: translateY(-2px); }
+.recognition-item__media {
+  aspect-ratio: 16 / 10;
+  background: var(--surface-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.recognition-card__list li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 7px;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--accent);
+.recognition-item__media img { width: 100%; height: 100%; object-fit: cover; }
+.recognition-item__body { padding: 20px; }
+.recognition-item__tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
 }
+.recognition-item__title { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+.recognition-item__desc { font-size: 13.5px; color: var(--text-secondary); line-height: 1.6; }
 
 /* ============================================================
    CONTACT
@@ -573,7 +645,7 @@ body {
   .about__grid { grid-template-columns: 1fr; gap: 40px; }
   .skills-grid { grid-template-columns: repeat(2, 1fr); }
   .project-grid { grid-template-columns: repeat(2, 1fr); }
-  .recognition-grid { grid-template-columns: 1fr; }
+  .recognition-grid { grid-template-columns: repeat(2, 1fr); }
   .contact-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
@@ -604,7 +676,9 @@ body {
   .skills-grid { grid-template-columns: 1fr; }
   .project-grid { grid-template-columns: 1fr; }
   .project-list-extra { grid-template-columns: 1fr; }
+  .recognition-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
+  .timeline__media { max-width: 100%; }
   .pub-item { grid-template-columns: 1fr; gap: 8px; }
   .pub-item__status { justify-self: start; }
   .hero__stats { gap: 28px; }

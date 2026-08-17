@@ -5,9 +5,10 @@
    ============================================================ */
 
 /* ---------- 1. DATA ----------
-   Edit these arrays to add/update projects and publications.
-   Swap "media: null" for a real path (e.g. "assets/projects/nyokkey.jpg")
-   once you have photos/videos to drop in. */
+   Edit these arrays to add/update content. For any "photo"/"media"
+   field: swap null for a real path (e.g. "assets/projects/nyokkey.jpg")
+   once you have a file to drop in. Videos: set "video" to an mp4 path
+   and (optionally) "media" to an image path to use as its poster. */
 
 const PROJECTS = [
   {
@@ -15,6 +16,7 @@ const PROJECTS = [
     title: "Nyokkey robot development",
     desc: "Ongoing contribution to the Nyokkey robot platform at TsukArm, spanning mechanical design, control, and integration.",
     media: "assets/projects/nyokkey.jpg",
+    video: null,
     link: null,
     featured: true
   },
@@ -23,6 +25,7 @@ const PROJECTS = [
     title: "Drone-mounted dual-arm shovel system",
     desc: "Imitation-learning-guided dual-arm shovel system for grasping flat objects with minimal gripping surfaces, mounted on a UAV. Currently under review at IEEE/ASME Transactions on Mechatronics.",
     media: "assets/projects/dual-arm-shovel-drone.jpg",
+    video: "assets/projects/Imitation-learning-drone.mp4",
     link: null,
     featured: true
   },
@@ -31,6 +34,7 @@ const PROJECTS = [
     title: "Robot teleoperation with motion capture",
     desc: "Teleoperation pipeline built on OptiTrack and Sony Mocopi motion capture, feeding real-time control to robotic arms.",
     media: null,
+    video: null,
     link: null,
     featured: true
   },
@@ -39,6 +43,7 @@ const PROJECTS = [
     title: "Stretchable jamming gripper",
     desc: "A stretchable jamming gripper capable of grasping flat plates, published in IEEE Access (Vol. 12).",
     media: null,
+    video: null,
     link: "https://ieeexplore.ieee.org/document/10487948",
     featured: true
   },
@@ -47,6 +52,7 @@ const PROJECTS = [
     title: "The Flying Shovel Picker",
     desc: "A drone-mounted, shovel-based rotational dual-arm system for picking up indeterminate objects. Poster presentation, ICRA 2024, Yokohama.",
     media: null,
+    video: null,
     link: null,
     featured: true
   },
@@ -55,6 +61,7 @@ const PROJECTS = [
     title: "Automated Hand Sanitizer Dispenser",
     desc: "Prototype-to-product device donated to quarantine centers and hospitals during COVID-19. Recognized by Sri Lanka's health sector, the Prime Minister, and the Minister of Technology and Research.",
     media: "assets/projects/sanitizer_dispenser.jpg",
+    video: null,
     link: "http://slic.gov.lk/automatic-hand-sanitizer/",
     featured: true
   },
@@ -99,31 +106,106 @@ const PUBLICATIONS = [
   { date: "2019/10", type: "conference", status: "Published", title: "Smart Home Energy Management System to Reduce Monthly Electricity Bill", venue: "GCCE 2019, Osaka", link: "https://ieeexplore.ieee.org/document/9015221" },
 ];
 
-/* ---------- 2. RENDERERS ---------- */
+const SKILLS = [
+  { title: "Robotic systems", list: "UFactory xArm, Realman arms, OpenArm, LeRobot, Dobot, Unitree robots, DH-Robotics & OnRobot grippers, AgileX UGVs, LiDAR, ROS1/ROS2", photo: null },
+  { title: "Programming", list: "Python, C++, Java, Android, Git, Arduino, VS Code", photo: null },
+  { title: "Single-board computers", list: "Raspberry Pi, Jetson Nano/Orin Nano, Seeed Odyssey, Asus Tinker, Linux/Ubuntu, Raspbian", photo: null },
+  { title: "Microcontrollers", list: "Arduino, ESP32/8266, STM32, ARM, PIC, AVR, PlatformIO", photo: null },
+  { title: "3D CAD & fabrication", list: "Fusion 360, UltiMaker Cura, FlashForge, Creality Ender", photo: null },
+  { title: "Electronics", list: "Circuit design, PCB creation, SMD soldering", photo: null },
+  { title: "Drones & flight controllers", list: "Cube Pilot/Orange Cube, Navio, Pixhawk, Naze32, SP, CC3D, KK, ArduPilot, LibrePilot, OpenPilot, iNav", photo: null },
+  { title: "Motion capture & teleoperation", list: "OptiTrack, Sony Mocopi, imitation learning pipelines, robot teleoperation", photo: null },
+];
+
+const EXPERIENCE = [
+  { date: "Nov 2023 – Present", title: "Robotics Engineer (part-time) — TsukArm", org: "Contributing to ongoing robotics research and development, including the Nyokkey robot, drone-arm integration, motion-capture teleoperation, and imitation-learning systems.", photo: "assets/experience/TsukArm.jpg", active: true },
+  { date: "2023 - Present", title: "Academic Reviewer — IEEE Robotics and Automation Letters", org: "IEEE RAS Young Reviewers Program", photo: null, active: true },
+  { date: "Apr – Oct 2023", title: "Assistant Robotics Engineer (part-time) — TechShare Inc., Japan", org: "Physical Computing Lab: Dobot industrial arms (Nova, MG400, Magician), Unitree quadrupeds, DH-Robotics/OnRobot grippers, AgileX UGVs, custom end-effector development.", photo: "assets/experience/TechShare.jpg", active: false },
+  { date: "2023 – 2024", title: "Robotics Teacher (part-time) — Primavera Robotics School", org: "Teaching basic robotics for primary school students on weekends.", photo: "assets/experience/Primavera.jpg", active: false },
+  { date: "Jun – Sep 2022", title: "Research Engineer — University of Peradeniya, Sri Lanka", org: "IoT dynamic line rating network for 33kV transmission lines; solar PV grid/off-grid changeover system.", photo: "assets/experience/Peradeniya.jpg", active: false },
+  { date: "2022", title: "Guest Lecturer — University of Vocational Technology, Sri Lanka", org: "IoT device programming, Arduino & Raspberry Pi for IT undergraduates.", photo: "assets/experience/Vocational.jpg", active: false },
+];
+
+const RECOGNITION = [
+  { type: "Patent", title: "Cylindrical Gas Saving System", desc: "National patent (LK/P/1/19868); selected to provincial level, National Exhibition for Inventions & Innovations, 2018.", photo: "assets/recognition/Cylindrical_Gas_ National_Exhibition.jpg" },
+  { type: "Award", title: "Laser Beam Distance Meter", desc: "Bronze medal, all-island National Exhibition for Inventions & Innovations, 2018.", photo:"assets/recognition/Laser_Beam_Distance_Meter.jpg" },
+  { type: "Invited talk", title: "2025 IEEE ICDTDA, Sendai", desc: "\"Robotics for Smart Society\" session — robotic teleoperation, AI, and imitation learning.", photo: "assets/recognition/2025_IEEE_ICDTDA_Sendai.jpg" },
+  { type: "Invited talk", title: "Online PCB Design workshop", desc: "Electronics Society, Wayamba University of Sri Lanka.", photo: "assets/recognition/PCB_Design_workshop.jpg" },
+  { type: "Invited talk", title: "XCHANGING IDEAS #34", desc: "Global 5G Evolution.", photo: "assets/recognition/XCHANGING_IDEAS.jpg" },
+  { type: "Media", title: "Sri Lankan national television feature", desc: "Coverage of the Automated Hand Sanitizer Dispenser.", photo: "assets/recognition/national_television.jpg" },
+  { type: "Media", title: "Newspaper coverage", desc: "Sri Lankan press coverage of innovation work.", photo: "assets/recognition/news_paper_innovation.jpg" },
+];
+
+/* ---------- 2. SHARED MEDIA PLACEHOLDER ---------- */
+
+function placeholderHtml(label = "Photo coming soon") {
+  return `
+    <div class="media-placeholder">
+      <svg class="icon" viewBox="0 0 24 24" width="24" height="24"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>
+      <span>${label}</span>
+    </div>`;
+}
+
+/* ---------- 3. RENDERERS ---------- */
 
 function renderProjects() {
   const grid = document.getElementById("project-grid");
   if (!grid) return;
 
-  grid.innerHTML = PROJECTS.map((p) => `
-    <article class="project-card reveal">
-      <div class="project-card__media">
-        ${p.media
-          ? `<img src="${p.media}" alt="${p.title}" loading="lazy">`
-          : `<div class="project-card__placeholder">
-               <svg class="icon" viewBox="0 0 24 24" width="28" height="28"><rect x="3" y="3" width="18" height="18" rx="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><path d="M21 15l-5-5L5 21"></path></svg>
-               <span>Media coming soon</span>
-             </div>`
-        }
-      </div>
-      <div class="project-card__body">
-        <p class="project-card__tag">${p.tag}</p>
-        <h3 class="project-card__title">${p.title}</h3>
-        <p class="project-card__desc">${p.desc}</p>
-        ${p.link ? `<a class="project-card__link" href="${p.link}" target="_blank" rel="noopener">View details →</a>` : ""}
-      </div>
-    </article>
-  `).join("");
+  grid.innerHTML = PROJECTS.map((p) => {
+    let mediaHtml;
+    if (p.video) {
+      const posterStyle = p.media ? ` style="background-image:url('${p.media}')"` : "";
+      mediaHtml = `
+        <div class="project-card__video-trigger" data-video="${p.video}"${posterStyle} role="button" tabindex="0" aria-label="Play video: ${p.title}">
+          <span class="project-card__play" aria-hidden="true">
+            <svg class="icon" viewBox="0 0 24 24" width="20" height="20"><polygon points="6 3 20 12 6 21 6 3"></polygon></svg>
+          </span>
+        </div>`;
+    } else if (p.media) {
+      mediaHtml = `<img src="${p.media}" alt="${p.title}" loading="lazy">`;
+    } else {
+      mediaHtml = placeholderHtml("Media coming soon");
+    }
+
+    return `
+      <article class="project-card reveal">
+        <div class="project-card__media">${mediaHtml}</div>
+        <div class="project-card__body">
+          <p class="project-card__tag">${p.tag}</p>
+          <h3 class="project-card__title">${p.title}</h3>
+          <p class="project-card__desc">${p.desc}</p>
+          ${p.link ? `<a class="project-card__link" href="${p.link}" target="_blank" rel="noopener">View details →</a>` : ""}
+        </div>
+      </article>
+    `;
+  }).join("");
+}
+
+function initProjectVideoTriggers() {
+  const grid = document.getElementById("project-grid");
+  if (!grid) return;
+
+  const play = (trigger) => {
+    const src = trigger.dataset.video;
+    const media = trigger.closest(".project-card__media");
+    if (!media || !src) return;
+    media.innerHTML = `<video controls autoplay playsinline><source src="${src}" type="video/mp4">Your browser doesn't support embedded video.</video>`;
+  };
+
+  grid.addEventListener("click", (e) => {
+    const trigger = e.target.closest(".project-card__video-trigger");
+    if (trigger) play(trigger);
+  });
+
+  grid.addEventListener("keydown", (e) => {
+    if (e.key !== "Enter" && e.key !== " ") return;
+    const trigger = e.target.closest(".project-card__video-trigger");
+    if (trigger) {
+      e.preventDefault();
+      play(trigger);
+    }
+  });
 }
 
 function renderMoreProjects() {
@@ -173,7 +255,61 @@ function initPublicationFilters() {
   });
 }
 
-/* ---------- 3. NAV (mobile toggle) ---------- */
+function renderSkills() {
+  const grid = document.getElementById("skills-grid");
+  if (!grid) return;
+
+  grid.innerHTML = SKILLS.map((s) => `
+    <div class="skill-card reveal">
+      <div class="skill-card__media">
+        ${s.photo ? `<img src="${s.photo}" alt="${s.title}" loading="lazy">` : placeholderHtml()}
+      </div>
+      <div class="skill-card__body">
+        <h3 class="skill-card__title">${s.title}</h3>
+        <p class="skill-card__list">${s.list}</p>
+      </div>
+    </div>
+  `).join("");
+}
+
+function renderExperience() {
+  const list = document.getElementById("experience-timeline");
+  if (!list) return;
+
+  list.innerHTML = EXPERIENCE.map((e) => `
+    <li class="timeline__item reveal">
+      <span class="timeline__dot ${e.active ? "timeline__dot--active" : ""}"></span>
+      <div class="timeline__content">
+        <p class="timeline__date">${e.date}</p>
+        <p class="timeline__title">${e.title}</p>
+        <p class="timeline__org">${e.org}</p>
+        <div class="timeline__media">
+          ${e.photo ? `<img src="${e.photo}" alt="${e.title}" loading="lazy">` : placeholderHtml()}
+        </div>
+      </div>
+    </li>
+  `).join("");
+}
+
+function renderRecognition() {
+  const grid = document.getElementById("recognition-grid");
+  if (!grid) return;
+
+  grid.innerHTML = RECOGNITION.map((r) => `
+    <article class="recognition-item reveal">
+      <div class="recognition-item__media">
+        ${r.photo ? `<img src="${r.photo}" alt="${r.title}" loading="lazy">` : placeholderHtml()}
+      </div>
+      <div class="recognition-item__body">
+        <p class="recognition-item__tag">${r.type}</p>
+        <h3 class="recognition-item__title">${r.title}</h3>
+        <p class="recognition-item__desc">${r.desc}</p>
+      </div>
+    </article>
+  `).join("");
+}
+
+/* ---------- 4. NAV (mobile toggle) ---------- */
 
 function initNavToggle() {
   const toggle = document.getElementById("nav-toggle");
@@ -193,7 +329,7 @@ function initNavToggle() {
   });
 }
 
-/* ---------- 4. THEME TOGGLE ---------- */
+/* ---------- 5. THEME TOGGLE ---------- */
 
 function initThemeToggle() {
   const toggle = document.getElementById("theme-toggle");
@@ -216,7 +352,7 @@ function initThemeToggle() {
   });
 }
 
-/* ---------- 5. SCROLL SPY (highlight active nav link) ---------- */
+/* ---------- 6. SCROLL SPY (highlight active nav link) ---------- */
 
 function initScrollSpy() {
   const sections = document.querySelectorAll("main .section, .hero");
@@ -240,7 +376,7 @@ function initScrollSpy() {
   sections.forEach((section) => spy.observe(section));
 }
 
-/* ---------- 6. REVEAL ON SCROLL ---------- */
+/* ---------- 7. REVEAL ON SCROLL ---------- */
 
 let revealObserver;
 function getRevealObserver() {
@@ -268,7 +404,7 @@ function initReveal() {
   document.querySelectorAll(".reveal").forEach(observeReveal);
 }
 
-/* ---------- 7. INIT ---------- */
+/* ---------- 8. INIT ---------- */
 
 document.addEventListener("DOMContentLoaded", () => {
   const yearEl = document.getElementById("year");
@@ -279,10 +415,15 @@ document.addEventListener("DOMContentLoaded", () => {
   initScrollSpy();
 
   renderProjects();
+  initProjectVideoTriggers();
   document.getElementById("load-more-projects")?.addEventListener("click", renderMoreProjects);
 
   renderPublications();
   initPublicationFilters();
+
+  renderSkills();
+  renderExperience();
+  renderRecognition();
 
   initReveal();
 });
