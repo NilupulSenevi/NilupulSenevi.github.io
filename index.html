@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nilupul Nuwan Senevirathna — Robotics Engineer | PhD Candidate</title>
+  <meta name="description" content="Portfolio of Nilupul Nuwan Senevirathna — Robotics Engineer and PhD Candidate specializing in robotic manipulation, drone systems, and AI-driven robotics.">
+
+  <!-- Google Fonts: Inter for body text, JetBrains Mono for technical accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ SKIP LINK (accessibility) ============ -->
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <!-- ============ NAVIGATION ============ -->
+  <header class="site-header" id="site-header">
+    <nav class="nav container">
+      <a href="#hero" class="nav__brand">N<span class="nav__brand-accent">.</span>S</a>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about" class="nav__link">About</a></li>
+        <li><a href="#skills" class="nav__link">Skills</a></li>
+        <li><a href="#experience" class="nav__link">Experience</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#publications" class="nav__link">Publications</a></li>
+        <li><a href="#recognition" class="nav__link">Recognition</a></li>
+        <li><a href="#contact" class="nav__link">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light theme" type="button">
+          <svg class="icon icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg>
+          <svg class="icon icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        </button>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="hero">
+      <div class="container hero__inner">
+        <p class="hero__eyebrow">Hello, I'm</p>
+        <h1 class="hero__name">Nilupul Nuwan Senevirathna</h1>
+        <p class="hero__title">Robotics Engineer <span class="hero__divider">|</span> PhD Candidate, Functional Control Systems</p>
+        <p class="hero__summary">
+          I design and build robotic manipulators, drone-mounted arm systems, and AI-driven robotics —
+          from stretchable jamming grippers to imitation-learning-guided aerial manipulation.
+          Based between Tokyo, Japan and Sri Lanka.
+        </p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">View projects</a>
+          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        </div>
+        <div class="hero__stats">
+          <div class="stat">
+            <span class="stat__num">15+</span>
+            <span class="stat__label">Publications</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">6+</span>
+            <span class="stat__label">Years in robotics</span>
+          </div>
+          <div class="stat">
+            <span class="stat__num">2</span>
+            <span class="stat__label">Patents &amp; medals</span>
+          </div>
+        </div>
+      </div>
+      <a href="#about" class="hero__scroll" aria-label="Scroll to about section">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <p class="section__eyebrow">About</p>
+        <h2 class="section__title">Building robots that grasp, fly, and learn</h2>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <p>
+              I'm a Master of Science graduate now pursuing a PhD in Functional Control Systems at the
+              Shibaura Institute of Technology, Tokyo — where I also earned the Electrical Engineering
+              and Computer Science Award. My work centers on robotic manipulators, drone-mounted robot
+              arms, image processing, and object detection, with a growing focus on imitation learning
+              and AI-driven control.
+            </p>
+            <p>
+              Outside the lab, I've designed and built industrial robot arms, quadruped robots, custom
+              grippers, and UGVs, and have a long-running interest in unmanned aerial vehicles. I'm a
+              skilled software developer in Python, C++, Arduino and Java, an academic reviewer for
+              <em>IEEE Robotics and Automation Letters</em>, and a robotics instructor for the next
+              generation of engineers.
+            </p>
+          </div>
+
+          <div class="about__education">
+            <h3 class="about__subheading">Education</h3>
+            <ol class="timeline timeline--compact">
+              <li class="timeline__item">
+                <span class="timeline__dot timeline__dot--active"></span>
+                <div class="timeline__content">
+                  <p class="timeline__date">Oct 2025 – Present</p>
+                  <p class="timeline__title">PhD, Functional Control Systems</p>
+                  <p class="timeline__org">Shibaura Institute of Technology, Tokyo</p>
+                </div>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__dot"></span>
+                <div class="timeline__content">
+                  <p class="timeline__date">2023 – 2025</p>
+                  <p class="timeline__title">MSc, Electrical Engineering &amp; Computer Science</p>
+                  <p class="timeline__org">Shibaura Institute of Technology, Tokyo — EECS Award</p>
+                </div>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__dot"></span>
+                <div class="timeline__content">
+                  <p class="timeline__date">2022 – 2023</p>
+                  <p class="timeline__title">Research Exchange Student</p>
+                  <p class="timeline__org">Image Processing &amp; Robotics Lab, Shibaura IT</p>
+                </div>
+              </li>
+              <li class="timeline__item">
+                <span class="timeline__dot"></span>
+                <div class="timeline__content">
+                  <p class="timeline__date">2016 – 2022</p>
+                  <p class="timeline__title">B.Sc. Applied Sciences</p>
+                  <p class="timeline__org">Wayamba University of Sri Lanka</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section section--alt" id="skills">
+      <div class="container">
+        <p class="section__eyebrow">Skills</p>
+        <h2 class="section__title">Tools of the trade</h2>
+
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h3 class="skill-card__title">Robotic systems</h3>
+            <p class="skill-card__list">UFactory xArm, Realman arms, OpenArm, LeRobot, Dobot, Unitree robots, DH-Robotics &amp; OnRobot grippers, AgileX UGVs, LiDAR, ROS1/ROS2</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__title">Programming</h3>
+            <p class="skill-card__list">Python, C++, Java, Android, Git, Arduino, VS Code</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__title">Single-board computers</h3>
+            <p class="skill-card__list">Raspberry Pi, Jetson Nano/Orin Nano, Seeed Odyssey, Asus Tinker, Linux/Ubuntu, Raspbian</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__title">Microcontrollers</h3>
+            <p class="skill-card__list">Arduino, ESP32/8266, STM32, ARM, PIC, AVR, PlatformIO</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__title">3D CAD &amp; fabrication</h3>
+            <p class="skill-card__list">Fusion 360, UltiMaker Cura, FlashForge, Creality Ender</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__title">Electronics</h3>
+            <p class="skill-card__list">Circuit design, PCB creation, SMD soldering</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__title">Drones &amp; flight controllers</h3>
+            <p class="skill-card__list">Cube Pilot/Orange Cube, Navio, Pixhawk, Naze32, SP, CC3D, KK, ArduPilot, LibrePilot, OpenPilot, iNav</p>
+          </div>
+          <div class="skill-card">
+            <h3 class="skill-card__title">Motion capture &amp; teleoperation</h3>
+            <p class="skill-card__list">OptiTrack, Sony Mocopi, imitation learning pipelines, robot teleoperation</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section" id="experience">
+      <div class="container">
+        <p class="section__eyebrow">Experience</p>
+        <h2 class="section__title">Where I've worked</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--active"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">Nov 2023 – Present</p>
+              <p class="timeline__title">Robotics Engineer (part-time) — TsukArm</p>
+              <p class="timeline__org">Contributing to ongoing robotics research and development, including the Nyokkey robot, drone-arm integration, motion-capture teleoperation, and imitation-learning systems.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot timeline__dot--active"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">Present</p>
+              <p class="timeline__title">Academic Reviewer — IEEE Robotics and Automation Letters</p>
+              <p class="timeline__org">IEEE RAS Young Reviewers Program</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">2023 – 2024</p>
+              <p class="timeline__title">Robotics Teacher (part-time) — Primavera Robotics School</p>
+              <p class="timeline__org">Teaching basic robotics for primary school students on weekends.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">Apr – Oct 2023</p>
+              <p class="timeline__title">Assistant Robotics Engineer (part-time) — TechShare Inc., Japan</p>
+              <p class="timeline__org">Physical Computing Lab: Dobot industrial arms (Nova, MG400, Magician), Unitree quadrupeds, DH-Robotics/OnRobot grippers, AgileX UGVs, custom end-effector development.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">Jun – Sep 2022</p>
+              <p class="timeline__title">Research Engineer — University of Peradeniya, Sri Lanka</p>
+              <p class="timeline__org">IoT dynamic line rating network for 33kV transmission lines; solar PV grid/off-grid changeover system.</p>
+            </div>
+          </li>
+          <li class="timeline__item">
+            <span class="timeline__dot"></span>
+            <div class="timeline__content">
+              <p class="timeline__date">2022</p>
+              <p class="timeline__title">Guest Lecturer — University of Vocational Technology, Sri Lanka</p>
+              <p class="timeline__org">IoT device programming, Arduino &amp; Raspberry Pi for IT undergraduates.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section section--alt" id="projects">
+      <div class="container">
+        <p class="section__eyebrow">Projects</p>
+        <h2 class="section__title">Featured work</h2>
+        <p class="section__intro">
+          A selection of recent and past projects. Photos and videos for the items below are on the way —
+          each card is ready to drop real media into.
+        </p>
+
+        <div class="project-grid" id="project-grid">
+          <!-- Featured project cards populated from data in script.js -->
+        </div>
+
+        <div class="project-more">
+          <button class="btn btn--ghost" id="load-more-projects" type="button">Show more projects</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PUBLICATIONS ============ -->
+    <section class="section" id="publications">
+      <div class="container">
+        <p class="section__eyebrow">Publications</p>
+        <h2 class="section__title">Research &amp; academic works</h2>
+        <p class="section__intro">
+          Chronological list from my official research achievement record. Journal papers first, then
+          conference papers. <a href="https://scholar.google.com/citations?user=FfYKwAEAAAAJ&amp;hl=en" target="_blank" rel="noopener">See full list on Google Scholar →</a>
+        </p>
+
+        <div class="pub-tabs">
+          <button class="pub-tab pub-tab--active" data-filter="all" type="button">All</button>
+          <button class="pub-tab" data-filter="journal" type="button">Journal</button>
+          <button class="pub-tab" data-filter="conference" type="button">Conference</button>
+        </div>
+
+        <ul class="pub-list" id="pub-list">
+          <!-- Populated from data in script.js -->
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ RECOGNITION (patents, awards, talks, media) ============ -->
+    <section class="section section--alt" id="recognition">
+      <div class="container">
+        <p class="section__eyebrow">Recognition</p>
+        <h2 class="section__title">Patents, awards &amp; talks</h2>
+
+        <div class="recognition-grid">
+          <div class="recognition-card">
+            <h3 class="recognition-card__title">Patents &amp; awards</h3>
+            <ul class="recognition-card__list">
+              <li>Cylindrical Gas Saving System — National patent (LK/P/1/19868); selected to provincial level, National Exhibition for Inventions &amp; Innovations, 2018</li>
+              <li>Laser Beam Distance Meter — Bronze medal, all-island National Exhibition for Inventions &amp; Innovations, 2018</li>
+            </ul>
+          </div>
+          <div class="recognition-card">
+            <h3 class="recognition-card__title">Invited talks</h3>
+            <ul class="recognition-card__list">
+              <li>2025 IEEE International Conference on Device Technologies for Diversified Applications, Sendai — "Robotics for Smart Society" session, on robotic teleoperation, AI, and imitation learning</li>
+              <li>Online PCB Design workshop — Electronics Society, Wayamba University of Sri Lanka</li>
+              <li>XCHANGING IDEAS #34 — Global 5G Evolution</li>
+            </ul>
+          </div>
+          <div class="recognition-card">
+            <h3 class="recognition-card__title">Media coverage</h3>
+            <ul class="recognition-card__list">
+              <li>Featured on Sri Lankan national television for the Automated Hand Sanitizer Dispenser</li>
+              <li>Featured in Sri Lankan newspaper articles on innovation work</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section" id="contact">
+      <div class="container contact__inner">
+        <p class="section__eyebrow">Contact</p>
+        <h2 class="section__title">Let's build something</h2>
+        <p class="section__intro">
+          Open to research collaborations, robotics engineering roles, and speaking opportunities.
+          Reach out any time.
+        </p>
+
+        <div class="contact-grid">
+          <a class="contact-link" href="mailto:nilupulsenavirathna@gmail.com">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v16H4z"></path><path d="M22 6l-10 7L2 6"></path></svg>
+            <span>nilupulsenavirathna@gmail.com</span>
+          </a>
+          <a class="contact-link" href="tel:+818079395374">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span>+81 80 7939 5374</span>
+          </a>
+          <a class="contact-link" href="https://www.linkedin.com/in/nilupul-nuwan-senevirathna-8b18221b4" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            <span>LinkedIn</span>
+          </a>
+          <a class="contact-link" href="https://github.com/NilupulSenevi" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+            <span>GitHub</span>
+          </a>
+          <a class="contact-link" href="https://www.researchgate.net/profile/Am-Senavirathna" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>
+            <span>ResearchGate</span>
+          </a>
+          <a class="contact-link" href="https://scholar.google.com/citations?user=FfYKwAEAAAAJ&hl=en" target="_blank" rel="noopener">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 10L12 4 2 10l10 6 10-6z"></path><path d="M6 12v5c0 1.66 3 3 6 3s6-1.34 6-3v-5"></path></svg>
+            <span>Google Scholar</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>&copy; <span id="year"></span> Nilupul Nuwan Senevirathna. Built with plain HTML, CSS &amp; JS.</p>
+      <a href="#hero" class="site-footer__top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
