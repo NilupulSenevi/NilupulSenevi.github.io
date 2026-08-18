@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nilupul Nuwan Senevirathna — Robotics Engineer | PhD Candidate</title>
-  <meta name="description" content="Portfolio of Nilupul Nuwan Senevirathna — Robotics Engineer and PhD Candidate specializing in robotic manipulation, drone systems, and AI-driven robotics.">
+  <title>Nilupul Nuwan Senevirathna — Robotics Engineer | MSc Holder</title>
+  <meta name="description" content="Portfolio of Nilupul Nuwan Senevirathna — Robotics Engineer and MSc holder specializing in robotic manipulation, drone systems, and AI-driven robotics.">
 
   <!-- Google Fonts: Inter for body text, JetBrains Mono for technical accents -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -50,36 +50,48 @@
     <!-- ============ HERO ============ -->
     <section class="hero" id="hero">
       <div class="container hero__inner">
-        <p class="hero__eyebrow">Hello, I'm</p>
-        <h1 class="hero__name">Nilupul Nuwan Senevirathna</h1>
-        <p class="hero__title">Robotics Engineer <span class="hero__divider">|</span> PhD Candidate, Functional Control Systems</p>
-        <p class="hero__summary">
-          I design and build robotic manipulators, drone-mounted arm systems, and AI-driven robotics —
-          from stretchable jamming grippers to imitation-learning-guided aerial manipulation.
-          Based between Tokyo, Japan and Sri Lanka.
-        </p>
-        <div class="hero__cta">
-          <a href="#projects" class="btn btn--primary">View projects</a>
-          <a href="#contact" class="btn btn--ghost">Get in touch</a>
+        <div class="hero__content">
+          <p class="hero__eyebrow">Hello, I'm</p>
+          <h1 class="hero__name">Nilupul Nuwan Senevirathna</h1>
+          <p class="hero__title">Robotics Engineer <span class="hero__divider">|</span> MSc Holder</p>
+          <p class="hero__summary">
+            I design and build robotic manipulators, drone-mounted robot arm systems, and AI-driven robotics —
+            from dual arm shovel gripper to imitation-learning-guided aerial manipulation.
+            Based between Tokyo, Japan and Sri Lanka.
+          </p>
+          <div class="hero__cta">
+            <a href="#projects" class="btn btn--primary">View projects</a>
+            <a href="#contact" class="btn btn--ghost">Get in touch</a>
+          </div>
+          <div class="hero__stats">
+            <div class="stat">
+              <span class="stat__num">15+</span>
+              <span class="stat__label">Publications</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">6+</span>
+              <span class="stat__label">Years in robotics</span>
+            </div>
+            <div class="stat">
+              <span class="stat__num">2</span>
+              <span class="stat__label">Patents &amp; medals</span>
+            </div>
+          </div>
         </div>
-        <div class="hero__stats">
-          <div class="stat">
-            <span class="stat__num">15+</span>
-            <span class="stat__label">Publications</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num">6+</span>
-            <span class="stat__label">Years in robotics</span>
-          </div>
-          <div class="stat">
-            <span class="stat__num">2</span>
-            <span class="stat__label">Patents &amp; medals</span>
-          </div>
+        <div class="hero__photo" id="hero-photo">
+          <!-- Populated from PROFILE_PHOTO in script.js -->
         </div>
       </div>
       <a href="#about" class="hero__scroll" aria-label="Scroll to about section">
         <svg viewBox="0 0 24 24" class="icon"><path d="M12 5v14M5 12l7 7 7-7"></path></svg>
       </a>
+    </section>
+
+    <!-- ============ PHOTO MARQUEE ============ -->
+    <section class="marquee" id="marquee" aria-label="Project photo highlights">
+      <div class="marquee__track" id="marquee-track">
+        <!-- Populated from MARQUEE_IMAGES in script.js -->
+      </div>
     </section>
 
     <!-- ============ ABOUT ============ -->
@@ -91,17 +103,16 @@
         <div class="about__grid">
           <div class="about__text">
             <p>
-              I'm a Master of Science graduate now pursuing a PhD in Functional Control Systems at the
-              Shibaura Institute of Technology, Tokyo — where I also earned the Electrical Engineering
-              and Computer Science Award. My work centers on robotic manipulators, drone-mounted robot
-              arms, image processing, and object detection, with a growing focus on imitation learning
-              and AI-driven control.
+              I'm a Master of Science graduate of the Shibaura Institute of Technology, Tokyo — where I
+              also earned the Dean's Award for Electrical Engineering and Computer Science. My work
+              centers on robotic manipulators, drone-mounted robot arms, image processing, and object
+              detection, with a growing focus on imitation learning and AI-driven control.
             </p>
             <p>
               Outside the lab, I've designed and built industrial robot arms, quadruped robots, custom
               grippers, and UGVs, and have a long-running interest in unmanned aerial vehicles. I'm a
               skilled software developer in Python, C++, Arduino and Java, an academic reviewer for
-              <em>IEEE Robotics and Automation Letters</em>, and a robotics instructor for the next
+              IEEE Robotics and Automation Letters, and a robotics instructor for the next
               generation of engineers.
             </p>
           </div>
@@ -112,17 +123,9 @@
               <li class="timeline__item">
                 <span class="timeline__dot timeline__dot--active"></span>
                 <div class="timeline__content">
-                  <p class="timeline__date">Oct 2025 – Present</p>
-                  <p class="timeline__title">PhD, Functional Control Systems</p>
-                  <p class="timeline__org">Shibaura Institute of Technology, Tokyo</p>
-                </div>
-              </li>
-              <li class="timeline__item">
-                <span class="timeline__dot"></span>
-                <div class="timeline__content">
                   <p class="timeline__date">2023 – 2025</p>
                   <p class="timeline__title">MSc, Electrical Engineering &amp; Computer Science</p>
-                  <p class="timeline__org">Shibaura Institute of Technology, Tokyo — EECS Award</p>
+                  <p class="timeline__org">Shibaura Institute of Technology, Tokyo — Dean's Award for Electrical Engineering and Computer Science</p>
                 </div>
               </li>
               <li class="timeline__item">
@@ -153,7 +156,7 @@
         <p class="section__eyebrow">Projects</p>
         <h2 class="section__title">Featured work</h2>
         <p class="section__intro">
-          A selection of recent and past projects. Click any card with a play icon to watch the video.
+          A selection of recent and past projects. Click "View details" to see more information.
         </p>
 
         <div class="project-grid" id="project-grid">

@@ -10,13 +10,39 @@
    once you have a file to drop in. Videos: set "video" to an mp4 path
    and (optionally) "media" to an image path to use as its poster. */
 
+/* Hero profile photo — set to e.g. "assets/profile/nilupul.jpg" once ready. */
+const PROFILE_PHOTO = "assets/profile/nilupul.jpg";
+
+/* Sliding photo strip right below the hero. Add paths like
+   "assets/marquee/photo1.jpg" as you drop files into assets/marquee/.
+   Needs at least 4-5 images for a smooth-looking loop. */
+const MARQUEE_IMAGES = ["assets/marquee/photo1.jpg", "assets/marquee/photo2.jpg", "assets/marquee/photo3.jpg", "assets/marquee/photo4.jpg", "assets/marquee/photo5.jpg","assets/marquee/photo6.jpg", "assets/marquee/photo7.jpg", "assets/marquee/photo8.jpg", "assets/marquee/photo9.jpg", "assets/marquee/photo10.jpg"];
+
 const PROJECTS = [
+  {
+    tag: "Teleoperation",
+    title: "Robot teleoperation with motion capture",
+    desc: "Teleoperation pipeline built on OptiTrack and Sony Mocopi motion capture, feeding real-time control to robotic arms.",
+    media: "assets/projects/Robot_teleoperation_mocopi.jpg",
+    video: "assets/projects/Robot_teleoperation_mocopi.mp4",
+    link: null,
+    featured: true
+  },
+  {
+    tag: "Motion Capture",
+    title: "External Position Estimation System for drone with optical tracking setup",
+    desc: "An external position estimation system for drones built on an optical motion-capture setup, providing precise ground-truth localization for indoor flight and control experiments.",
+    media: "assets/projects/optical_tracking_drone.jpg",
+    video: "assets/projects/optical_tracking_drone.mp4",
+    link: null,
+    featured: true
+  },
   {
     tag: "Current — TsukArm",
     title: "Nyokkey robot development",
     desc: "Ongoing contribution to the Nyokkey robot platform at TsukArm, spanning mechanical design, control, and integration.",
     media: "assets/projects/nyokkey.jpg",
-    video: null,
+    video: "assets/projects/nyokkey_demo.mp4",
     link: null,
     featured: true
   },
@@ -30,29 +56,11 @@ const PROJECTS = [
     featured: true
   },
   {
-    tag: "Teleoperation",
-    title: "Robot teleoperation with motion capture",
-    desc: "Teleoperation pipeline built on OptiTrack and Sony Mocopi motion capture, feeding real-time control to robotic arms.",
-    media: null,
-    video: null,
-    link: null,
-    featured: true
-  },
-  {
-    tag: "Soft Robotics — IEEE Access",
-    title: "Stretchable jamming gripper",
-    desc: "A stretchable jamming gripper capable of grasping flat plates, published in IEEE Access (Vol. 12).",
-    media: null,
-    video: null,
-    link: "https://ieeexplore.ieee.org/document/10487948",
-    featured: true
-  },
-  {
-    tag: "Aerial Manipulation — ICRA",
-    title: "The Flying Shovel Picker",
-    desc: "A drone-mounted, shovel-based rotational dual-arm system for picking up indeterminate objects. Poster presentation, ICRA 2024, Yokohama.",
-    media: null,
-    video: null,
+    tag: "Imitation Learning",
+    title: "Imitation-learning-powered robotic systems using stacks like LeRobot",
+    desc: "Robotic systems that learn manipulation behaviors directly from demonstration data, built on imitation-learning stacks such as LeRobot.",
+    media: "assets/projects/lerobot_demo.jpg",
+    video: "assets/projects/lerobot_demo.mp4",
     link: null,
     featured: true
   },
@@ -65,10 +73,28 @@ const PROJECTS = [
     link: "http://slic.gov.lk/automatic-hand-sanitizer/",
     featured: true
   },
+  {
+    tag: "Aerial Manipulation — ICRA",
+    title: "The Flying dual arm shovel gripper",
+    desc: "A drone-mounted, shovel-based rotational dual-arm system for picking up indeterminate objects. Poster presentation, ICRA 2024, Yokohama.",
+    media: "assets/projects/shovel_gripper_drone.jpg",
+    video: "assets/projects/shovel_gripper_drone.mp4",
+    link: null,
+    featured: true
+  },
+  {
+    tag: "Electronics",
+    title: "Low-cost LPG gas detector",
+    desc: "A low-cost LPG gas detector device for early leak detection and safety monitoring. (2022)",
+    media: "assets/projects/LPG_gas_detector.jpg",
+    video: null,
+    link: null,
+    featured: true
+  },
 ];
 
 const PROJECTS_MORE = [
-  "Imitation-learning-powered robotic systems using stacks like LeRobot",
+  "<a href=\"https://ieeexplore.ieee.org/document/10487948\" target=\"_blank\" rel=\"noopener\">Stretchable jamming gripper — grasping flat plates (IEEE Access)</a>",
   "Robotic arm integrated with drones",
   "Sensor data collector & dynamic line rating IoT network for 33kV transmission lines (Univ. of Peradeniya, 2022)",
   "Drone + hardware contribution to \"Eagle Eye for ER Doctor\" tele-monitoring research (Mie University, 2019–2020)",
@@ -82,7 +108,6 @@ const PROJECTS_MORE = [
   "Power backup system for Engenia Solutions Lanka (2022)",
   "\"Man-day calculator\" mobile app for audit time tracking (Ind-Expo Certification, 2021)",
   "Nitrogen fixation via high-voltage synthetic lightning (2021–2022)",
-  "Low-cost LPG gas detector (2022)",
   "Low-cost pulse oximeter, prototype attempt (2021)",
   "Custom-built drones",
   "\"WANDA\" insect robot",
@@ -92,34 +117,33 @@ const PUBLICATIONS = [
   { date: "2026/06", type: "journal", status: "In review", title: "Drone-Mounted Rotational Dual-Arm Shovel-Gripper System for Post-Landing Object Collection", venue: "IEEE Transactions on Systems, Man and Cybernetics: Systems" },
   { date: "2026/05", type: "journal", status: "In review", title: "Vision-Guided Dual-Shovel Platform for Pick-and-Transport of Multi-Shape Objects by UAVs", venue: "IEEE Transactions on Human-Machine Systems" },
   { date: "2026/04", type: "journal", status: "In review", title: "A Drone-Mounted Dual-Arm Shovel System Guided by Imitation Learning for Grasping Flat Objects with Minimal Gripping Surfaces", venue: "IEEE/ASME Transactions on Mechatronics" },
-  { date: "2026/03", type: "conference", status: "Published", title: "An Autonomous Advance-Scout Platform for Vision-Based Railway Obstacle Detection and Driver Assistance", venue: "ICIPRoB 2026" },
-  { date: "2025/05", type: "conference", status: "Published", title: "Understanding Spatial Relationships with Spherical Image Data for Manipulating Intelligent Robotic Wheelchairs", venue: "ICRA 2025 (poster)" },
-  { date: "2025/05", type: "conference", status: "Published", title: "Integrated Aerial Manipulation: A Dual-Shovel Drone System for Object Detection and Retrieval", venue: "ICRA 2025 (poster)" },
-  { date: "2025/03", type: "journal", status: "Published", title: "REoOS: Rapid Estimation of Open Space in Complex and Dynamic Environments Using Depth Sensor-Based 3D Analysis", venue: "IEEE Sensors Letters" },
-  { date: "2024/05", type: "conference", status: "Published", title: "The Flying Shovel Picker: A Drone-Mounted Shovel-Based Rotational Dual Arm System for Picking Up Indeterminate Objects", venue: "ICRA 2024 (poster)" },
+  { date: "2026/03", type: "conference", status: "Published", title: "An Autonomous Advance-Scout Platform for Vision-Based Railway Obstacle Detection and Driver Assistance", venue: "ICIPRoB 2026", link: "https://ieeexplore.ieee.org/document/11497807/" },
+  { date: "2025/05", type: "conference", status: "Published", title: "Understanding Spatial Relationships with Spherical Image Data for Manipulating Intelligent Robotic Wheelchairs", venue: "ICRA 2025 (poster)", link: "https://events.infovaya.com/presentation?id=153011" },
+  { date: "2025/05", type: "conference", status: "Published", title: "Integrated Aerial Manipulation: A Dual-Shovel Drone System for Object Detection and Retrieval", venue: "ICRA 2025 (poster)", link: "https://events.infovaya.com/presentation?id=150605" },
+  { date: "2025/03", type: "journal", status: "Published", title: "REoOS: Rapid Estimation of Open Space in Complex and Dynamic Environments Using Depth Sensor-Based 3D Analysis", venue: "IEEE Sensors Letters", link: "https://ieeexplore.ieee.org/document/11036621" },
+  { date: "2024/05", type: "conference", status: "Published", title: "The Flying Shovel Picker: A Drone-Mounted Shovel-Based Rotational Dual Arm System for Picking Up Indeterminate Objects", venue: "ICRA 2024 (poster)", link: "https://events.infovaya.com/presentation?id=123467" },
   { date: "2024/04", type: "conference", status: "Published", title: "Visible Light Communication Based User Verification System for Drone Delivery", venue: "ICIPRoB 2024", link: "https://ieeexplore.ieee.org/document/10543428" },
   { date: "2024/03", type: "conference", status: "Published", title: "Image Classification Method to Identify Mature Coconut", venue: "ICIPRoB 2024", link: "https://ieeexplore.ieee.org/document/10543979" },
   { date: "2024/01", type: "journal", status: "Published", title: "A Stretchable Jamming Gripper Grasping Flat Plates", venue: "IEEE Access, Vol. 12", link: "https://ieeexplore.ieee.org/document/10487948" },
   { date: "2022/10", type: "conference", status: "Published", title: "Development of a Smart Stock Assistant for Industries", venue: "GCCE 2022, Osaka", link: "https://ieeexplore.ieee.org/document/10014251" },
   { date: "2021/10", type: "conference", status: "Published", title: "Development of a Raspberry Pi Based Soil Nutrient Analyzing System for Crop Cultivation", venue: "GCCE 2021, Kyoto", link: "https://ieeexplore.ieee.org/document/9621360" },
-  { date: "2020/03", type: "conference", status: "Published", title: "Low-cost Talking Calculator for Visually Impaired People in Sri Lanka", venue: "ICIPRob 2020, Negombo" },
+  { date: "2020/03", type: "conference", status: "Published", title: "Low-cost Talking Calculator for Visually Impaired People in Sri Lanka", venue: "ICIPRob 2020, Negombo", link: "https://www.researchgate.net/publication/353767286_Low-cost_Talking_Calculator_for_Visually_Impaired_People_in_Sri_Lanka" },
   { date: "2019/10", type: "conference", status: "Published", title: "Smart Home Energy Management System to Reduce Monthly Electricity Bill", venue: "GCCE 2019, Osaka", link: "https://ieeexplore.ieee.org/document/9015221" },
 ];
 
 const SKILLS = [
-  { title: "Robotic systems", list: "UFactory xArm, Realman arms, OpenArm, LeRobot, Dobot, Unitree robots, DH-Robotics & OnRobot grippers, AgileX UGVs, LiDAR, ROS1/ROS2", photo: null },
+  { title: "Robotic systems", list: "UFactory xArm, Realman arms, OpenArm, LeRobot, Dobot, Unitree robots, DH-Robotics & OnRobot grippers, AgileX UGVs, LiDAR, ROS1/ROS2", photo:  "assets/skills/Robotic_systems.jpg"},
   { title: "Programming", list: "Python, C++, Java, Android, Git, Arduino, VS Code", photo: null },
-  { title: "Single-board computers", list: "Raspberry Pi, Jetson Nano/Orin Nano, Seeed Odyssey, Asus Tinker, Linux/Ubuntu, Raspbian", photo: null },
+  { title: "Single-board computers", list: "Raspberry Pi, Jetson Nano/Orin Nano, Seeed Odyssey, Asus Tinker, Linux/Ubuntu, Raspbian", photo: "assets/skills/Raspberry.jpg"},
   { title: "Microcontrollers", list: "Arduino, ESP32/8266, STM32, ARM, PIC, AVR, PlatformIO", photo: null },
-  { title: "3D CAD & fabrication", list: "Fusion 360, UltiMaker Cura, FlashForge, Creality Ender", photo: null },
+  { title: "3D CAD & fabrication", list: "Fusion 360, UltiMaker Cura, FlashForge, Creality Ender", photo: "assets/skills/3D_CAD.jpg" },
   { title: "Electronics", list: "Circuit design, PCB creation, SMD soldering", photo: null },
-  { title: "Drones & flight controllers", list: "Cube Pilot/Orange Cube, Navio, Pixhawk, Naze32, SP, CC3D, KK, ArduPilot, LibrePilot, OpenPilot, iNav", photo: null },
+  { title: "Drones & flight controllers", list: "Cube Pilot/Orange Cube, Navio, Pixhawk, Naze32, SP, CC3D, KK, ArduPilot, LibrePilot, OpenPilot, iNav", photo: "assets/skills/Drones.jpg" },
   { title: "Motion capture & teleoperation", list: "OptiTrack, Sony Mocopi, imitation learning pipelines, robot teleoperation", photo: null },
 ];
 
 const EXPERIENCE = [
   { date: "Nov 2023 – Present", title: "Robotics Engineer (part-time) — TsukArm", org: "Contributing to ongoing robotics research and development, including the Nyokkey robot, drone-arm integration, motion-capture teleoperation, and imitation-learning systems.", photo: "assets/experience/TsukArm.jpg", active: true },
-  { date: "2023 - Present", title: "Academic Reviewer — IEEE Robotics and Automation Letters", org: "IEEE RAS Young Reviewers Program", photo: null, active: true },
   { date: "Apr – Oct 2023", title: "Assistant Robotics Engineer (part-time) — TechShare Inc., Japan", org: "Physical Computing Lab: Dobot industrial arms (Nova, MG400, Magician), Unitree quadrupeds, DH-Robotics/OnRobot grippers, AgileX UGVs, custom end-effector development.", photo: "assets/experience/TechShare.jpg", active: false },
   { date: "2023 – 2024", title: "Robotics Teacher (part-time) — Primavera Robotics School", org: "Teaching basic robotics for primary school students on weekends.", photo: "assets/experience/Primavera.jpg", active: false },
   { date: "Jun – Sep 2022", title: "Research Engineer — University of Peradeniya, Sri Lanka", org: "IoT dynamic line rating network for 33kV transmission lines; solar PV grid/off-grid changeover system.", photo: "assets/experience/Peradeniya.jpg", active: false },
@@ -147,6 +171,35 @@ function placeholderHtml(label = "Photo coming soon") {
 }
 
 /* ---------- 3. RENDERERS ---------- */
+
+function renderHeroPhoto() {
+  const el = document.getElementById("hero-photo");
+  if (!el) return;
+  el.innerHTML = PROFILE_PHOTO
+    ? `<img src="${PROFILE_PHOTO}" alt="Nilupul Nuwan Senevirathna" loading="eager">`
+    : placeholderHtml("Profile photo coming soon");
+}
+
+function renderMarquee() {
+  const section = document.getElementById("marquee");
+  const track = document.getElementById("marquee-track");
+  if (!section || !track) return;
+
+  const hasImages = MARQUEE_IMAGES.length > 0;
+  const items = hasImages
+    ? MARQUEE_IMAGES
+    : ["", "", "", "", ""]; // placeholder slots until photos are added
+
+  const itemHtml = (src) => `
+    <div class="marquee__item">
+      ${src ? `<img src="${src}" alt="" loading="lazy">` : placeholderHtml("Photo coming soon")}
+    </div>`;
+
+  // Duplicate the sequence so the CSS animation (translateX -50%) loops seamlessly.
+  const sequence = [...items, ...items].map(itemHtml).join("");
+  track.innerHTML = sequence;
+  section.classList.toggle("marquee--placeholder", !hasImages);
+}
 
 function renderProjects() {
   const grid = document.getElementById("project-grid");
@@ -231,7 +284,7 @@ function renderPublications(filter = "all") {
     <li class="pub-item reveal">
       <span class="pub-item__date">${p.date}</span>
       <div>
-        <p class="pub-item__title">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener">${p.title}</a>` : p.title}</p>
+        <p class="pub-item__title">${p.link ? `<a href="${p.link}" target="_blank" rel="noopener" class="pub-item__link">${p.title}<span class="pub-item__ext" aria-hidden="true">↗</span></a>` : p.title}</p>
         <p class="pub-item__venue">${p.venue}</p>
       </div>
       <span class="pub-item__status ${p.status === "Published" ? "pub-item__status--published" : ""}">${p.status}</span>
@@ -413,6 +466,9 @@ document.addEventListener("DOMContentLoaded", () => {
   initThemeToggle();
   initNavToggle();
   initScrollSpy();
+
+  renderHeroPhoto();
+  renderMarquee();
 
   renderProjects();
   initProjectVideoTriggers();
